@@ -1,11 +1,20 @@
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
+import { GifsPageComponent } from './gifs/gifs-page/gifs-page.component';
+import { ResultsComponent } from './gifs/results/results.component';
+import { SearchComponent } from './gifs/search/search.component';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [AppComponent, SidebarComponent],
+      declarations: [
+        AppComponent,
+        SidebarComponent,
+        GifsPageComponent,
+        SearchComponent,
+        ResultsComponent,
+      ],
     }).compileComponents();
   });
 
@@ -25,6 +34,8 @@ describe('AppComponent', () => {
   //   const fixture = TestBed.createComponent(AppComponent);
   //   fixture.detectChanges();
   //   const compiled = fixture.nativeElement as HTMLElement;
-  //   expect(compiled.querySelector('.content span')?.textContent).toContain('giphyApp app is running!');
+  //   expect(compiled.querySelector('.content span')?.textContent).toContain(
+  //     'giphyApp app is running!'
+  //   );
   // });
 });
