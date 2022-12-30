@@ -37,7 +37,7 @@ export class GifsService {
 
       localStorage.setItem('history', JSON.stringify(this._history));
     }
-    console.log(this._history);
+
     // fetch(
     //   'https://api.giphy.com/v1/gifs/search?api_key=lhLPUqznYzjQ47TiG6tOXuYhpGGCyjMf&q=dragon'
     // ).then((res) => {
@@ -60,7 +60,6 @@ export class GifsService {
     this.http
       .get<SearchGifsResponse>(`${this.service_url}/search`, { params: params })
       .subscribe((resp) => {
-        console.log(resp.data);
         this.results = resp.data;
         if (this.results) {
           localStorage.setItem('results', JSON.stringify(this.results));
