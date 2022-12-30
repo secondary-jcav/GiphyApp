@@ -12,4 +12,8 @@ export class SidebarComponent {
   get historicalElements() {
     return this.gifsService.historical;
   }
+
+  findElement(element: string) {
+    this.gifsService.findGifs(element);
+  }
 }

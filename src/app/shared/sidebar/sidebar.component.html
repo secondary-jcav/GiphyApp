@@ -7,7 +7,8 @@
       href="#"
       class="list-group-item list-group-item-action"
       *ngFor="let element of historicalElements"
-      >{{ element }}</a
+      (click)="findElement(element)"
+      >{{ element | titlecase }}</a
     >
   </div>
 </div>
