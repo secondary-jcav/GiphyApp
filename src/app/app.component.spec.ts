@@ -4,6 +4,7 @@ import { SidebarComponent } from './shared/sidebar/sidebar.component';
 import { GifsPageComponent } from './gifs/gifs-page/gifs-page.component';
 import { ResultsComponent } from './gifs/results/results.component';
 import { SearchComponent } from './gifs/search/search.component';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
@@ -15,6 +16,7 @@ describe('AppComponent', () => {
         SearchComponent,
         ResultsComponent,
       ],
+      imports: [HttpClientModule],
     }).compileComponents();
   });
 

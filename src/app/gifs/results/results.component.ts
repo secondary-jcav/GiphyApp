@@ -6,6 +6,10 @@ import { GifsService } from '../services/gifs.service';
   templateUrl: './results.component.html',
   styleUrls: ['./results.component.css'],
 })
+/**
+ * Displays the images on the main page
+ * @constructor - imports GifsService
+ */
 export class ResultsComponent {
   get results() {
     return this.gifsService.results;

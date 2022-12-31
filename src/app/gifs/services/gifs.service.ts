@@ -1,19 +1,17 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { SearchGifsResponse, Gif } from '../interfaces/gifs.interface';
-import secrets from 'secrets';
+import secrets from 'src/secrets';
+
 @Injectable({
   providedIn: 'root',
 })
 export class GifsService {
-  private _history: string[] = [];
-  private apiKey: string = secrets.api_key;
-  public results: Gif[] = [];
-  private service_url: string = 'https://api.giphy.com/v1/gifs';
-
-  get historical() {
-    return [...this._history];
-  }
+  /**
+   * Makes the call to the giphy API and saves results in
+   * local storage
+   * @constructor - imports HttpClient, parses info from local storage if it's there
+   */
 
   constructor(private http: HttpClient) {
     if (localStorage.getItem('history')) {
@@ -24,6 +22,28 @@ export class GifsService {
       this.results = JSON.parse(localStorage.getItem('results')!);
     }
   }
+  /**
+   * @private _history: array of strings used by the sidebar component
+   * @private apiKey: string that lives in secrets.ts
+   * @private results: Gif type results displayed by the results component
+   * @private service_url: giphy api url in string form
+   */
+
+  private _history: string[] = [];
+  private apiKey: string = secrets.api_key;
+  public results: Gif[] = [];
+  private service_url: string = 'https://api.giphy.com/v1/gifs';
+
+  get historical() {
+    return [...this._history];
+  }
+
+  /**
+   * saves the query in local storage
+   * Launches a GET to the API url and retrieves the results
+   * saves the results local storage
+   * @param query String input from the search bar
+   */
 
   findGifs(query: string) {
     query = query.trim().toLowerCase();

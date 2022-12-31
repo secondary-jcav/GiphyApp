@@ -6,14 +6,17 @@ import { GifsService } from '../services/gifs.service';
   templateUrl: './search.component.html',
   styleUrls: [],
 })
+
+/**
+ * Handles the search bar on the main page
+ * @constructor - imports GifsService and passes the string query
+ */
 export class SearchComponent {
   @ViewChild('txtSearch') txtSearch!: ElementRef<HTMLInputElement>;
 
   constructor(private gifsSErvice: GifsService) {}
 
   lookup() {
-    // console.log(searchTerm);
-    // document.querySelector('input').value = '';
     const txtValue = this.txtSearch.nativeElement.value;
     this.gifsSErvice.findGifs(txtValue);
     this.txtSearch.nativeElement.value = '';
