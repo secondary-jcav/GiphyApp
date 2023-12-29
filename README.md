@@ -1,27 +1,45 @@
 # GiphyApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.2.
+This project is an Angular-based web application that allows users to search for GIFs using the GIPHY API. Users can input a word in the search bar, and the app will retrieve and display 10 results.
 
-## Development server
+## Prerequisites
+
+Before you begin, ensure you have met the following requirements:
+- Node.js (Version 14 or newer)
+- npm (Version 6 or newer)
+
+## Setting Up the Project
+
+To set up the project on your local machine:
+
+1. Clone the repository:
+`git clone https://github.com/secondary-jcav/GiphyApp.git`
+
+2. Navigate to the project directory:
+`cd GiphyApp`
+
+3. Install the necessary dependencies:
+`npm install`
+
+
+## Configuration
+
+Set up your GIPHY API key:
+
+1. Obtain an API key from [GIPHY Developers](https://developers.giphy.com/).
+2. Create a `secrets.ts` file in the root of your project and add your API key:
+```
+export default {
+  api_key: 'your api key',
+};
+```
+
+
+## Development Server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
